@@ -31,24 +31,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().csrf().disable()
                 .x509()
                 .subjectPrincipalRegex("CN=(.*?),")
-//                .userDetailsService(userDetailsService());
                 .userDetailsService(userService);
     }
-
-//    @Bean
-//    public UserDetailsService userDetailsService() {
-//        return new UserDetailsService() {
-//            @Override
-//            public UserDetails loadUserByUsername(String username) {
-//                if (username.equals("Anton.Shu")) {
-//                    return new User(username, "",
-//                            AuthorityUtils
-//                                    .commaSeparatedStringToAuthorityList("ROLE_USER"));
-//                }
-//                return null;
-//            }
-//        };
-//    }
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {

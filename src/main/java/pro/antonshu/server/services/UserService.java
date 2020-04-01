@@ -1,12 +1,10 @@
 package pro.antonshu.server.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.stereotype.Service;
-import pro.antonshu.server.entities.User;
-import pro.antonshu.server.repositories.UserRepository;
 
-//@Service
+import org.springframework.security.core.userdetails.UserDetailsService;
+import pro.antonshu.server.entities.User;
+
+
 public interface UserService extends UserDetailsService {
 
     User findOneByLogin(String login);

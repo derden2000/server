@@ -23,8 +23,13 @@ public class Document {
     @Column(name = "path")
     private String path;
 
-//    @Column(name = "data")
-//    private byte[] data;
+    @Column(name = "data")
+    private byte[] data;
+
+    public Document(String title, byte[] data) {
+        this.title = title;
+        this.data = data;
+    }
 
     @Override
     public boolean equals(Object o) {

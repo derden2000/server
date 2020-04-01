@@ -29,9 +29,8 @@ public class TestController {
         UserDetails currentUser
                 = (UserDetails) ((Authentication) principal).getPrincipal();
         User user = userService.findOneByLogin(currentUser.getUsername());
-        System.out.println("Password: " + user.getPassword());
-        System.out.println("User Docs: " + user.getDocuments());
+        System.out.println("Login: " + user.getLogin());
         System.out.println("Authorities: " + currentUser.getAuthorities());
-        return "Hello " + currentUser.getUsername()+"!";
+        return String.format("Hello %s! Please Sign in to continue.", user.getLogin());
     }
 }
